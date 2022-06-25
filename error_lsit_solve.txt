@@ -7,3 +7,7 @@
 - git push origin master
 
 ======================== 
+
+#php artisan make:controller StudentController
+#php artisan make:model Stuent -mr
+#php artisan migrate
