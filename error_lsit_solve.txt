@@ -1,0 +1,9 @@
+#laravel new Student_Management
+=============================================
+
+- git init
+- git remote add origin <link>
+- git add . / <file name>
+- git push origin master
+
+======================== 
