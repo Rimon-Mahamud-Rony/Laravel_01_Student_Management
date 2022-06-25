@@ -19,4 +19,9 @@ Route::get('/', function () {
 
 */
 
-Route::get('/', 'StudentController@index');
+Route::get('/', 'StudentController@index')->name('index');
+
+Route::get('/create', 'StudentController@create')->name('create');
+
+Route::post('/store', 'StudentController@store')->name('store');
+

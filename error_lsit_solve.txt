@@ -41,3 +41,11 @@ app/providers/Route service provider/ on line 29
 ==[[ ERROR-02: student model does not exit does not exist. ]]==
 
 use App\Models\Student; 
+
+==[[ ERROR-03: 419 PAGE EXPIRED ]]==
+
+solve:
+
+ @csrf
+
+ or {{csrf_field() }}

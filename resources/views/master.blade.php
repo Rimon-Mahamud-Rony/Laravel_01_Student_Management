@@ -15,17 +15,17 @@
 <!-- NAVBAR START-->
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid" style="background-color: #416180;"> 
-    <a class="navbar-brand" href=# style="color: white; ">STUDENT MANAGEMENT</a>
+    <a class="navbar-brand" href="{{route('index')}}" style="color: white; ">STUDENT MANAGEMENT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href=# style="color: white; ">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{route('index')}}" style="color:white; ">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href=# style="color: white; ">Creat</a>
+          <a class="nav-link" href="{{route('create')}}" style="color: white; ">Creat</a>
         </li>
       </ul>
     </div>
@@ -41,6 +41,8 @@
     <br>
 
     @yield('index_section')
+
+    @yield('create_new_students')
 
   </div>
 </div>

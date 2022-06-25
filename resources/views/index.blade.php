@@ -7,7 +7,29 @@
 <body>
 
 <div class="container-fluid">
-	<h6 class="alert alert-primary alert-sm" role="alert" style="width:80%;"> List of all students</h6>
+  <div class="container-fluid" style="font-size: 20px;">
+    <h6 class="alert alert-primary alert-sm" role="alert" style="border-radius: 0px;"> List of all students</h6>  
+  </div>
+	
+
+
+<!--
+<?/*
+$arr[]=''; 
+$numItems = count($arr);
+$i = 0;
+foreach($arr as $access_as_student=>$indexstudent) {
+  if(++$i === $numItems) {
+    echo "last index!";
+  }
+}  
+*/?>-->
+
+@if (Session::has('message'))
+   <div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
+
+
 
 	<table class="table table-striped table-bordered table-sm table-hover">
       <thead>
@@ -21,13 +43,14 @@
         </tr>
       </thead>
       <tbody>
+ 
+  @php $i=0; @endphp
 
 	@foreach ($access_as_student as $indexstudent)
 	
-	@php 
-	$i=0; 
-	$i=$i+1; 
-	@endphp
+
+	@php $i=$i+1; @endphp 
+	
         <tr>
           <th>{{ $i}}</th>
           <td>{{ $indexstudent->name }}</td>
