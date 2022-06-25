@@ -10,4 +10,34 @@
 
 #php artisan make:controller StudentController
 #php artisan make:model Stuent -mr
-#php artisan migrate
+#php artisan migrates
+
+
+- app/provide/appServiceProvider
+
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+
+==[[ ERROR-01: Target class [StudentController] does not exist. ]]==
+
+solve: 
+
+just make uncomment or make active 
+
+class RouteServiceProvider extends ServiceProvider
+{
+    // ...
+    protected $namespace = 'App\Student\Controllers';
+    // ...
+}
+
+app/providers/Route service provider/ on line 29
+
+
+==[[ ERROR-02: student model does not exit does not exist. ]]==
+
+use App\Models\Student; 
