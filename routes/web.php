@@ -29,3 +29,9 @@ Route::post('/store', 'StudentController@store')->name('store');
 
 Route::post('/update/{id}', 'StudentController@update')->name('update');
 
+Route::get('/delete/{id}', 'StudentController@delete')->name('delete');
+
+
+/* delete -> form -> action method =post hole ekhane route::post hoto,
+ zehetu delete sorasori button diye kora hocche tai route get diyei kaj kortese */
+

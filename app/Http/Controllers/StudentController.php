@@ -55,4 +55,35 @@ class StudentController extends Controller
         $student_id = Student::find($id);
         return view('edit')->with('ct_st_id', $student_id);
     }
+
+    public function update(Request $request, $id)
+    {
+        $update_student = Student::find($id);
+
+        $update_student->name= $request->name;
+
+        $update_student->department_name= $request->dept_name;
+
+        $update_student->registration_id= $request->reg_id;
+
+        $update_student->info= $request->info;
+
+         $update_student->save();
+
+         //$message="registration completed";
+
+         return redirect()->route('index')->with('message', 'Updated Student Information !!');
+
+    }
+
+    public function delete($id)
+    {
+        $student_id = Student::find($id);
+
+        $student_id->delete();
+        
+        //return view('edit')->with('ct_st_id', $student_id);
+
+        return redirect()->route('index')->with('message', 'Deleted Student Record!!');
+    }
 }

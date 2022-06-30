@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+Edit Student | Student Management
+@endsection
+
 @section('edit_students_information')
 
 <div class="container-fluid">

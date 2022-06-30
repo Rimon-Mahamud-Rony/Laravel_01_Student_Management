@@ -2,13 +2,17 @@
 
 @extends('master')
 
+@section('title')
+Student List | Student Management
+@endsection
+
 @section('index_section')
 
 <body>
 
 <div class="container-fluid">
   <div class="container-fluid" style="font-size: 20px;">
-    <h6 class="alert alert-primary alert-sm" role="alert" style="border-radius: 0px;"> List of all students</h6>  
+    <div class="alert alert-primary alert-sm" role="alert" style="border-radius: 0px; font-size: 12px;"> List of all students</div>  
   </div>
 	
 
@@ -26,12 +30,12 @@ foreach($arr as $access_as_student=>$indexstudent) {
 */?>-->
 
 @if (Session::has('message'))
-   <div class="alert alert-info">{{ Session::get('message') }}</div>
+   <div class="alert alert-warning" style="border-radius:0px; width:70%; margin-left: 15%;  text-align: center; font-size: 12px;">{{ Session::get('message') }}</div>
 @endif
 
 
 
-	<table class="table table-striped table-bordered table-sm table-hover">
+	<table class="table table-striped table-bordered table-sm table-hover" style="font-size:13px;">
       <thead>
         <tr>
           <th scope="col">S/N</th>
@@ -51,7 +55,7 @@ foreach($arr as $access_as_student=>$indexstudent) {
 
 	@php $i=$i+1; @endphp 
 	
-        <tr>
+        <tr style="padding: 20%;">
           <th>{{ $i}}</th>
           <td>{{ $indexstudent->name }}</td>
           <td>{{ $indexstudent->registration_id }}</td>
@@ -59,7 +63,7 @@ foreach($arr as $access_as_student=>$indexstudent) {
           <td>{{ $indexstudent->info }}</td>
           <td>
             <a href="{{route('edit',$indexstudent->id)}}" style="text-style:none;"><button class="btn btn-success btn-sm">EDIT</button></a>
-            <a href="#" style="text-style:none;"><button class="btn btn-danger btn-sm">DELETE</button></a>
+            <a href="{{route('delete',$indexstudent->id)}}" style="text-style:none;"><button class="btn btn-danger btn-sm">DELETE</button></a>
           </td>
         </tr>
 	@endforeach
