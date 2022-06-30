@@ -49,4 +49,10 @@ class StudentController extends Controller
 
          return redirect()->route('index')->with('message', 'registration completed');
     }
+
+    public function edit($id)
+    {
+        $student_id = Student::find($id);
+        return view('edit')->with('ct_st_id', $student_id);
+    }
 }

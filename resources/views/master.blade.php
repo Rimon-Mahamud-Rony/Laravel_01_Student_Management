@@ -43,6 +43,7 @@
     @yield('index_section')
 
     @yield('create_new_students')
+    @yield('edit_students_information')
 
   </div>
 </div>
