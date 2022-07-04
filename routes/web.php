@@ -35,3 +35,7 @@ Route::get('/delete/{id}', 'StudentController@delete')->name('delete');
 /* delete -> form -> action method =post hole ekhane route::post hoto,
  zehetu delete sorasori button diye kora hocche tai route get diyei kaj kortese */
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

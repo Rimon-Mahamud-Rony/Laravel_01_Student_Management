@@ -49,3 +49,11 @@ solve:
  @csrf
 
  or {{csrf_field() }}
+
+
+ [[======= For authentication ===========]]
+
+ => composer require laravel/ui --dev
+ => php artisan ui vue --auth
+
+ 
