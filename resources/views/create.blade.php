@@ -6,6 +6,8 @@ Create Student| Student Management
 
 @section('create_new_students')
 
+@if (Auth::Check())
+
 <div class="container-fluid">
 	<div class="container-fluid">
     	<h6 class="alert alert-primary alert-sm" style="border-radius: 0px;">Create New Students</h6> 
@@ -48,5 +50,22 @@ Create Student| Student Management
 		</form>
 	</div>
 </div>
+
+@else
+	<div class="card">
+	  <div class="card-header">
+	    <h4 class="alert alert-warning">You are not Logged in !!</h4>
+	  </div>
+	  <div class="card-body">
+	    <h5 class="card-title">Please log in to add new student to the records</h5>
+	    <p class="card-text">You have to log in, if you registerd before. If you are not registerd yet, plese complete your registration at first</p>
+	    <a href="{{route('register')}}" class="btn btn-primary">Register</a>
+
+	    <a href="{{route('login')}}" class="btn btn-info"> Log In </a>
+
+	  </div>
+	</div>
+
+@endif 
 
 @endsection

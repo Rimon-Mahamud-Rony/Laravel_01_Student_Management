@@ -1,3 +1,5 @@
+@extends('auth.login_master')
+
 @extends('layouts.app')
 
 @section('content')

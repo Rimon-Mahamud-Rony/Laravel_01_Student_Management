@@ -11,6 +11,8 @@ Edit Student | Student Management
     	<h6 class="alert alert-primary alert-sm" style="border-radius: 0px;">Create New Students</h6> 
   	</div>
 
+@if (Auth::Check())
+
   	<div class="container-fluid col-sm-6">
 		<form class="form-horizontal" action="{{route('update', $ct_st_id)}}" method="post">
 			 @csrf
@@ -39,4 +41,20 @@ Edit Student | Student Management
 	</div>
 </div>
 
+	@else
+		<div class="card">
+		  <div class="card-header">
+		    <h4 class="alert alert-warning">You are not Logged in !!</h4>
+		  </div>
+		  <div class="card-body">
+		    <h5 class="card-title">Please log in first to update the student records</h5>
+		    <p class="card-text">You have to log in, if you registerd before. If you are not registerd yet, plese complete your registration at first</p>
+		    <a href="{{route('register')}}" class="btn btn-primary">Register</a>
+
+		    <a href="{{route('login')}}" class="btn btn-info"> Log In </a>
+
+		  </div>
+		</div>
+
+	@endif 
 @endsection

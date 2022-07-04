@@ -63,7 +63,9 @@ foreach($arr as $access_as_student=>$indexstudent) {
           <td>{{ $indexstudent->info }}</td>
           <td>
             <a href="{{route('edit',$indexstudent->id)}}" style="text-style:none;"><button class="btn btn-success btn-sm">EDIT</button></a>
+            @if (Auth::Check())
             <a href="{{route('delete',$indexstudent->id)}}" style="text-style:none;"><button class="btn btn-danger btn-sm">DELETE</button></a>
+            @endif
           </td>
         </tr>
 	@endforeach

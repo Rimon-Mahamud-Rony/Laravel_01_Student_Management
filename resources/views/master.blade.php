@@ -26,12 +26,30 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('index')}}" style="color:white; ">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{route('index')}}" style="color:white; ">STUDENT LIST</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('create')}}" style="color: white; ">Creat</a>
+          <a class="nav-link" href="{{route('create')}}" style="color: white; ">ADD STUDENT</a>
         </li>
       </ul>
+
+      @if (Auth::Check())
+        <ul class="navbar-nav" style="margin-left: 60%;">
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('home')}}"><button class="btn btn-sm btn-info">DASHBOARD</button></a>
+            </li>
+        </ul>
+      @else
+        <ul class="navbar-nav" style="margin-left: 60%;">
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}"><button class="btn btn-sm btn-primary">Register </button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('login')}}" ><button class="btn btn-sm btn-success"> Log In </button></a>
+          </li>
+        </ul>
+      @endif 
+      
     </div>
   </div>
 </nav>
