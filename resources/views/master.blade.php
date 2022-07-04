@@ -51,6 +51,9 @@
 
   </div>
 </div>
-
+    
+    <script type="text/javascript" src="{{asset('js/parsley.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/parsley.min.js')}}"></script>  
+    <script src="parsley.min.js"></script>
 </body>
 </html>

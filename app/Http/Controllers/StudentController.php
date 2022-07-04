@@ -28,6 +28,17 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //dd('submitted');
+        //validation
+
+         $validated = $request->validate([
+        
+        'name' => 'required|string|max:20',
+        'reg_id' => 'required|integer',
+        'dept_name' => 'required|string',
+        'info' => 'nullable',
+
+        
+        ]);
 
         //model name= "Student" we are going to make an object of this model as "obj_student"
 
