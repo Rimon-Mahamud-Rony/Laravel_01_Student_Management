@@ -34,11 +34,22 @@
       </ul>
 
       @if (Auth::Check())
-        <ul class="navbar-nav" style="margin-left: 60%;">
+        <ul class="navbar-nav" style="margin-left: 50%;">
             <li class="nav-item">
-              <a class="nav-link" href="{{route('home')}}"><button class="btn btn-sm btn-info">DASHBOARD</button></a>
+              <a class="nav-link" href="{{route('home')}}"><button class="btn btn-sm btn-secondary" style="color:yellow;">Go to {{ Auth::user()->name }}'s DASHBOARD</button></a>
             </li>
         </ul>
+                              <div>
+                                    <button class="btn btn-sm btn-danger"><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a></button>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
       @else
         <ul class="navbar-nav" style="margin-left: 60%;">
           <li class="nav-item">

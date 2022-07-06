@@ -57,3 +57,25 @@ solve:
  => php artisan ui vue --auth
 
  
+ ==[[ ERROR-04: Call to undefined function App\Http\Controllers\Auth\str_slug() ]]==
+
+String and Array helpers are removed from laravel 6.0 Core Framework. So if You need to still use the helper install the package...
+
+=> composer require laravel/helpers
+
+custom user update:
+
+-> Register controller, register.php 
+-> user model, user.php
+
+user.php 
+
+protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'first_name',
+        'last_name',
+        'user_name',
+        'gender',
+    ];
