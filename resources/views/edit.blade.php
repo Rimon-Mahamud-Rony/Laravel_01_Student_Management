@@ -42,16 +42,16 @@ Edit Student | Student Management
 </div>
 
 	@else
-		<div class="card">
-		  <div class="card-header">
-		    <h4 class="alert alert-warning">You are not Logged in !!</h4>
-		  </div>
+		<div class="card col-sm-8" style="margin-left: 15%;">
+		  <h4 ><div class="card-header alert alert-danger" style="color:red;">
+		    You are not Logged in !!
+		  </div></h4>
 		  <div class="card-body">
-		    <h5 class="card-title">Please log in first to update the student records</h5>
+		    <h5 class="card-title" style="color:green;">Please log in first to update the student records</h5><hr>
 		    <p class="card-text">You have to log in, if you registerd before. If you are not registerd yet, plese complete your registration at first</p>
-		    <a href="{{route('register')}}" class="btn btn-primary">Register</a>
-
-		    <a href="{{route('login')}}" class="btn btn-info"> Log In </a>
+		    <a href="{{route('register')}}" class="btn btn-lg btn-primary" style="border-radius:0px;"><h2>Register</h2></a>
+		    
+		    <a href="{{route('login')}}" class="btn btn-lg btn-info" style="border-radius:0px;"> <h2>Log In</h2> </a>
 
 		  </div>
 		</div>
